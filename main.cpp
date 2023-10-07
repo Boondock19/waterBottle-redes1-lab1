@@ -57,12 +57,12 @@ class WaterBottle {
             int firstBottleCurrentValue = firstBottle.getCurrentValue();
             int secondBottleCurrentValue = secondBottle.getCurrentValue();
 
-            if (firstBottleCurrentValue + secondBottleCurrentValue <= secondBottleCapacity) {
+            if (firstBottleCurrentValue + secondBottleCurrentValue < secondBottleCapacity) {
                 secondBottle.setCurrentValue(firstBottleCurrentValue + secondBottleCurrentValue);
                 firstBottle.setCurrentValue(firstBottleCapacity - secondBottle.getCurrentValue());
             } else {
                 secondBottle.setCurrentValue(secondBottleCapacity);
-                firstBottle.setCurrentValue(firstBottleCapacity - secondBottle.getCurrentValue());
+                firstBottle.setCurrentValue(firstBottleCapacity - (secondBottleCapacity - secondBottleCurrentValue ));
             }
         }
 
@@ -85,6 +85,26 @@ int main()
 
     cout << "Valor actual de la botella 1: " << bottle1.getCurrentValue() << endl;
     cout << "Valor actual de la botella 2: " << bottle2.getCurrentValue() << endl;
+
+    bottle2.empty();
+    cout << "Valor actual de la botella 1: " << bottle1.getCurrentValue() << endl;
+    cout << "Valor actual de la botella 2: " << bottle2.getCurrentValue() << endl;
+
+    fillOtherBottle(bottle1, bottle2);
+
+    bottle1.fill();
+    cout << "Valor actual de la botella 1: " << bottle1.getCurrentValue() << endl;
+    cout << "Valor actual de la botella 2: " << bottle2.getCurrentValue() << endl;
+    fillOtherBottle(bottle1, bottle2);
+
+    cout << "Valor actual de la botella 1: " << bottle1.getCurrentValue() << endl;
+    cout << "Valor actual de la botella 2: " << bottle2.getCurrentValue() << endl;
+
+    if (bottle1.getCurrentValue() == 4 ) {
+        cout << "Test passed" << endl;
+    } else {
+        cout << "Test failed" << endl;
+    }
 
     return 0;
 }
