@@ -1,7 +1,14 @@
 #include <iostream>
 using namespace std;
 
+/*
+    Redes de computacion I
 
+    José González 15-10627
+    Ana Santos. 17-10602
+    Amaranta Villegas 16-11247
+
+*/
 
 class WaterBottle {
     private:
