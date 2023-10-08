@@ -22,16 +22,16 @@ class WaterBottle {
             setCurrentValue(0);
         }
 
-       int getCapacity() {
+        int getCapacity() {
             return Capacity;
         }
 
-       int getCurrentValue() {
+        int getCurrentValue() {
             return CurrentValue;
         }
 
 
-       void setCapacity(int capacity) {
+        void setCapacity(int capacity) {
             Capacity = capacity;
         }
 
